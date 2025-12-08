@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELOVATE Logo</title>
+    <!-- 고급스러운 느낌을 위한 폰트 추가 (Montserrat: 세련된 고딕, Noto Sans KR: 기본 고딕) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 95%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 실제 이미지 로고 스타일 */
+        .real-logo-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 40px; /* 텍스트와 간격 */
+        }
+
+        /* 하단 텍스트 그룹 */
+        .text-group {
+            border-top: 1px solid #e5e7eb; /* 얇은 구분선 */
+            padding-top: 30px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* 1. AI 예배·목회 운영 시스템 (영문) - 폰트 변경 (Gothic / Montserrat) */
+        .solution-title {
+            font-family: 'Montserrat', sans-serif; /* 깔끔한 고딕체 적용 */
+            font-size: 20px;
+            font-weight: 600; /* 두께감 있게 */
+            color: #1e3a8a; /* 브랜드 네이비 컬러 */
+            letter-spacing: 3px; /* 자간 적당히 */
+            text-transform: uppercase; /* 대문자 고정 */
+        }
+
+        /* 2. 연락처 */
+        .contact-info {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #6b7280; /* 차분한 회색 */
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* 이미지 없을 때 대체 박스 */
+        .logo-placeholder {
+            font-size: 16px;
+            color: #999;
+            border: 2px dashed #ddd;
+            padding: 40px 80px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            background-color: #f9fafb;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <!-- 
+           [사용법] 
+           1. 로고 이미지 파일 이름을 'logo.png'로 변경하세요.
+           2. 이 HTML 파일과 같은 폴더에 넣으세요.
+        -->
+        <img src="logo.png" alt="ELOVATE 로고" class="real-logo-img" onerror="this.style.display='none'; document.querySelector('.logo-placeholder').style.display='block';">
+        
+        <!-- 이미지가 없을 때 보이는 안내 박스 -->
+        <div class="logo-placeholder" style="display:none;">
+            <p style="margin:0; text-align:center;">
+                <strong style="color:#333;">[이미지 준비]</strong><br><br>
+                가지고 계신 로고 파일명을<br>
+                <strong>logo.png</strong>로 바꿔서<br>
+                이 파일 옆에 놓아주세요.
+            </p>
+        </div>
+
+        <!-- 하단 추가 텍스트 -->
+        <div class="text-group">
+            <div class="solution-title">AI Worship & Ministry Management System</div>
+            <div class="contact-info">Contact : hd.kang@elovate.kr</div>
+        </div>
+    </div>
+
+</body>
+</html>
