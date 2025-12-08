@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELOVATE Logo</title>
-    <!-- 고급스러운 느낌을 위한 폰트 추가 (Montserrat: 세련된 고딕, Noto Sans KR: 기본 고딕) -->
+    <title>ELOVATE</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
@@ -52,8 +51,8 @@
             font-family: 'Montserrat', sans-serif; /* 깔끔한 고딕체 적용 */
             font-size: 20px;
             font-weight: 600; /* 두께감 있게 */
-            color: #1e3a8a; /* 브랜드 네이비 컬러 */
-            letter-spacing: 3px; /* 자간 적당히 */
+            color: #5f3488; /* 브랜드 네이비 컬러 */
+            letter-spacing: 2px; /* 자간 적당히 */
             text-transform: uppercase; /* 대문자 고정 */
         }
 
@@ -85,30 +84,15 @@
 </head>
 <body>
 
-    <div class="logo-container">
-        <!-- 
-           [사용법] 
-           1. 로고 이미지 파일 이름을 'logo.png'로 변경하세요.
-           2. 이 HTML 파일과 같은 폴더에 넣으세요.
-        -->
-        <img src="logo.png" alt="ELOVATE 로고" class="real-logo-img" onerror="this.style.display='none'; document.querySelector('.logo-placeholder').style.display='block';">
-        
-        <!-- 이미지가 없을 때 보이는 안내 박스 -->
-        <div class="logo-placeholder" style="display:none;">
-            <p style="margin:0; text-align:center;">
-                <strong style="color:#333;">[이미지 준비]</strong><br><br>
-                가지고 계신 로고 파일명을<br>
-                <strong>logo.png</strong>로 바꿔서<br>
-                이 파일 옆에 놓아주세요.
-            </p>
-        </div>
+<div class="logo-container">
+    <img src="logo.png" alt="ELOVATE 로고" class="real-logo-img" onerror="this.style.display='none'; document.querySelector('.logo-placeholder').style.display='block';">
 
-        <!-- 하단 추가 텍스트 -->
-        <div class="text-group">
-            <div class="solution-title">AI Worship & Ministry Management System</div>
-            <div class="contact-info">Contact : hd.kang@elovate.kr</div>
-        </div>
+    <!-- 하단 추가 텍스트 -->
+    <div class="text-group">
+        <div class="solution-title">AI Worship & Ministry Management System</div>
+        <div class="contact-info">Contact : hd.kang@elovate.kr</div>
     </div>
+</div>
 
 </body>
 </html>
