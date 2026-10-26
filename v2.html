@@ -70,9 +70,10 @@ a{color:inherit;text-decoration:none}
 .brand .emark{font-size:11px;transform-origin:0 50%}
 /* 내비 로고는 페이지를 다 읽고 1초 뒤(html.logo-go)에 움직인다 — 바로 돌면 화면이 뜨는 사이에 지나가 버린다 */
 .logo-go .brand .emark{animation:em-grow .6s cubic-bezier(.2,.7,.2,1) .9s both}
-.logo-go .brand .emark .d{animation:em-fade .5s ease both}
-.logo-go .brand .emark .u{animation:em-down .7s cubic-bezier(.4,0,.2,1) .2s both}
-.logo-go .brand .emark .l{animation:em-up .7s cubic-bezier(.4,0,.2,1) .2s both}
+/* 가운데 큰 로고도 같은 때 합쳐진다(커지지는 않음) */
+.logo-go .emark .d{animation:em-fade .5s ease both}
+.logo-go .emark .u{animation:em-down .7s cubic-bezier(.4,0,.2,1) .2s both}
+.logo-go .emark .l{animation:em-up .7s cubic-bezier(.4,0,.2,1) .2s both}
 @keyframes em-fade{to{opacity:0}}
 @keyframes em-down{to{transform:translateY(.585em)}}
 @keyframes em-up{to{transform:translateY(-.585em)}}
@@ -80,10 +81,11 @@ a{color:inherit;text-decoration:none}
 /* 포인트: 내비에서는 합쳐진 뒤 빛줄기가 한 번 훑고 지나감 */
 .emark{position:relative}
 .emark>span{position:relative}
-.brand .emark::after{content:"";position:absolute;inset:-.2em -.1em;pointer-events:none;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%);background-size:260% 100%;background-position:120% 0}
+.brand .emark::after,.hero .emark::after{content:"";position:absolute;inset:-.2em -.1em;pointer-events:none;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.9) 50%,transparent 58%);background-size:260% 100%;background-position:120% 0}
 .logo-go .brand .emark::after{animation:em-shine 1.1s ease-in-out 1.6s both}
+.logo-go .hero .emark::after{animation:em-shine 1.1s ease-in-out 1s both}
 @keyframes em-shine{from{background-position:120% 0}to{background-position:-20% 0}}
-@media (prefers-reduced-motion:reduce){.logo-go .brand .emark,.logo-go .brand .emark span,.logo-go .brand .emark::after{animation-duration:1ms;animation-delay:0s}}
+@media (prefers-reduced-motion:reduce){.logo-go .brand .emark,.logo-go .emark span,.logo-go .emark::after{animation-duration:1ms;animation-delay:0s}}
 .hero .emark{display:grid;width:max-content;margin:0 auto 30px;font-size:clamp(30px,6vw,52px)}
 .nav-links{display:flex;gap:26px;align-items:center;font-size:13px;color:#424245}
 .nav-links a{transition:color .2s}
