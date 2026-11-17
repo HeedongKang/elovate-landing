@@ -407,6 +407,30 @@ footer a:hover{color:var(--fg)}
 .aio-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:32px}
 .aio-tags span{padding:10px 20px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--accent);font-weight:700;font-size:14px}
 @media(max-width:860px){.aio{grid-template-columns:1fr}.aio .hub{order:-1}}
+/* 준비 중 표시 · Sermon-Flow 타일(설교 작성 화면의 따뜻한 바탕에 맞춤) */
+.soon{display:inline-block;margin-left:8px;padding:3px 10px 2px;border-radius:999px;background:rgba(154,107,46,.1);border:1px solid rgba(154,107,46,.32);color:var(--gold);font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.02em;text-transform:none;vertical-align:2px}
+.tile.warm{background:linear-gradient(180deg,#f8f2ea 0%,#f5f5f7 100%)}
+.tile.warm .scr.img{aspect-ratio:16/10}
+.tile.warm .scr.img img{height:100%;object-fit:cover;object-position:top}
+.band.alt .duo .d{background:var(--bg)}
+.note-c{margin:26px auto 0;max-width:760px;text-align:center;font-size:15px;color:var(--muted);line-height:1.6}
+/* 예배 영상: 한 예배 한 편, 영상 없는 구간은 표지(실제 표지 그림) */
+.film{width:100%;max-width:560px;background:#fff;border-radius:22px;padding:16px 16px 18px;box-shadow:0 24px 60px rgba(20,10,40,.14),0 0 0 1px var(--line)}
+.film .fv{position:relative;border-radius:12px;overflow:hidden;background:#000}
+.film .fv img{width:100%;height:auto}
+.film .fv .tag{position:absolute;top:10px;left:10px;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#e9e6f2;font-size:12px;font-weight:600}
+.film .bar{position:relative;display:flex;gap:3px;height:34px;margin-top:14px}
+.film .bar i{display:flex;align-items:center;justify-content:center;border-radius:6px;font-style:normal;font-size:12px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;min-width:0}
+.film .bar i.cam{background:linear-gradient(135deg,#8b5cf6,#2F6BFF)}
+.film .bar i.cv{background:#0b0b0d;color:#b9b6c5}
+.film .bar .ph{position:absolute;top:-6px;bottom:-6px;left:6%;width:2px;background:#ffd666;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.18)}
+.film .meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px 12px;margin-top:12px;font-size:13px;color:var(--muted)}
+.film .meta b{color:var(--fg);font-weight:700}
+.film .leg{display:flex;gap:12px}
+.film .leg span{display:inline-flex;align-items:center;gap:6px}
+.film .leg span::before{content:'';width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,#8b5cf6,#2F6BFF)}
+.film .leg span.cv::before{background:#0b0b0d}
+@media(max-width:480px){.film .bar i{font-size:11px}}
 /* 세로 화면: 고정 무대 대신 네 장면을 차례로 */
 .pin .scenes{display:none}
 @media(max-aspect-ratio:3/4){
@@ -431,6 +455,7 @@ footer a:hover{color:var(--fg)}
       <a href="#live">Worship‑Flow Live</a>
       <a href="#flow">Worship‑Flow</a>
       <a href="#qt">QT‑Flow</a>
+      <a href="#sermon">Sermon‑Flow</a>
       <a href="#platform">통합</a>
       <a href="#why">왜 Elovate</a>
       <a class="nav-cta" href="#contact">도입 문의</a>
@@ -492,7 +517,7 @@ footer a:hover{color:var(--fg)}
       <a class="tile full rv" href="#live">
         <p class="eyebrow">Worship‑Flow Live</p>
         <h3 class="h-m">말씀을 전하시면,<br>화면이 따라갑니다.</h3>
-        <p class="lead">본문을 부르시면 성경이 오르고, 읽으시면 줄이 따라가고, 찬송을 부르시면 반주기가 준비됩니다. 미디어 봉사자가 없는 주일에도 예배는 평소처럼 흐릅니다.</p>
+        <p class="lead">본문을 부르시면 성경이 오르고, 읽으시면 줄이 따라가고, 찬송을 부르시면 반주기가 준비됩니다. 녹음과 예배 영상 촬영도 예배와 함께 시작됩니다. 미디어 봉사자가 없는 주일에도 예배는 평소처럼 흐릅니다.</p>
         <div class="links"><span class="more">자세히 보기</span></div>
         <div class="vis"><div style="width:100%">
           <div class="tv"><div class="lv show">
@@ -513,6 +538,13 @@ footer a:hover{color:var(--fg)}
         <p class="lead">한 본문을 세 말씀으로 나누어 묵상과 기도까지. 한국어와 영어로 매일 아침 성도에게 닿습니다.</p>
         <div class="links"><span class="more">자세히 보기</span></div>
         <div class="vis"><div class="phone"><div class="notch"></div><div class="scr"><img src="img/qt-ko.jpg" alt="QT-Flow 오늘의 QT 쇼츠 화면: 교만을 꺾으시고 다시 살리시는 하나님, 다니엘 4장" width="640" height="1138"></div></div></div>
+      </a>
+      <a class="tile full warm rv" href="#sermon">
+        <p class="eyebrow">Sermon‑Flow <span class="soon">준비 중</span></p>
+        <h3 class="h-m">설교를 쓰시면,<br>예배 화면이 함께 준비됩니다.</h3>
+        <p class="lead">대지와 구절을 넣으며 쓰시면 성경 본문은 개역개정으로 채워지고, 다 쓰신 원고는 단추 하나로 예배 화면에 전해집니다.</p>
+        <div class="links"><span class="more">자세히 보기</span></div>
+        <div class="vis"><div class="mac"><div class="lid"><div class="scr img"><img src="img/sermon-flow.jpg" alt="Sermon-Flow 설교 작성 화면: 왼쪽 목차, 위에 예배 날짜와 설교 제목과 본문, 아래 대지와 개역개정 구절" width="2000" height="1469" loading="lazy"></div></div><div class="hinge"></div><div class="foot"></div></div></div>
       </a>
     </div>
   </div>
@@ -564,7 +596,7 @@ footer a:hover{color:var(--fg)}
     <div class="center rv">
       <p class="eyebrow">On the pulpit</p>
       <h2 class="h-l">목사님 자리에서는<br>이렇게 보입니다.</h2>
-      <p class="lead" style="margin-top:16px">단추 하나로 녹음과 화면이 함께 시작됩니다. 설교 자료가 있으면 제목과 본문도 미리 읽어 둡니다. 아래는 한 교회에 맞춰 제작되어 지금 운영 중인 실제 화면입니다.</p>
+      <p class="lead" style="margin-top:16px">단추 하나로 녹음과 화면, 촬영이 함께 시작됩니다. 설교 자료가 있으면 제목과 본문도 미리 읽어 둡니다. 아래는 한 교회에 맞춰 제작되어 지금 운영 중인 실제 화면입니다.</p>
     </div>
     <div class="split">
       <div class="vis rv"><img class="shot" src="img/pastor-start.jpg" alt="Worship-Flow Live 시작 화면: 설교 제목과 본문 말씀이 채워져 있고 예배 시작 단추와 주기도문 단추가 있다" width="2000" height="1250" loading="lazy"></div>
@@ -575,12 +607,58 @@ footer a:hover{color:var(--fg)}
           <li>지난 예배 보기: 어떤 말씀이 언제 올랐는지 기록으로</li>
           <li>주기도문 단추: 오후 사역을 마칠 때는 이것만</li>
           <li>오늘 설교 내용은 예배 전에 미리 학습해 둡니다</li>
+          <li>예배가 열릴 때는 교회 영상이나 Elovate 인트로로</li>
         </ul>
       </div>
     </div>
     <div class="duo">
       <div class="d rv"><h4>단상 화면</h4><p>지금 오른 절과 말씀 해설이 한 화면에. 앞절 · 뒷절 · 사도신경 · 교독문 · 주기도문은 손끝 하나로 올리고, 설교 자막은 단추 하나로 켜고 끕니다.</p><img class="shot" src="img/pastor.jpg" alt="Worship-Flow Live 단상 화면: 다니엘 11장 본문에서 지금 읽는 줄이 붉게 표시되고, 옆에 그 절의 말씀 해설" width="2000" height="1250" loading="lazy"></div>
-      <div class="d rv d1"><h4>예배 전 안내판</h4><p>예배를 기다리는 시간에는 오늘 말씀과 본문, 시계와 날씨, 교회 소식과 예배 시간표가 회중 화면을 채웁니다.</p><img class="shot" src="img/wait.jpg" alt="Worship-Flow Live 예배 전 안내판: 오늘 말씀, 본문, 시계, 날씨, 교회 소식" width="2000" height="1125" loading="lazy"></div>
+      <div class="d rv d1"><h4>예배 전 안내판</h4><p>예배를 기다리는 시간에는 오늘 말씀과 본문, 시계와 날씨 · 미세먼지, 교회 소식과 예배 시간표가 회중 화면을 채웁니다.</p><img class="shot" src="img/wait.jpg" alt="Worship-Flow Live 예배 전 안내판: 오늘 말씀, 본문, 시계, 날씨, 교회 소식" width="2000" height="1125" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Live: 스피치뷰 ===== -->
+<section class="band alt" id="speech">
+  <div class="wrap wide">
+    <div class="center rv">
+      <p class="eyebrow">Speech View</p>
+      <h2 class="h-l">목사님 앞에도,<br><span class="grad">말씀이 함께 흐릅니다.</span></h2>
+      <p class="lead" style="margin-top:16px">강단 맞은편에 화면을 하나 더 두시면, 회중이 보는 말씀과 오늘 설교 원고가 목사님 눈높이에서 함께 흐릅니다. 원고를 내려다보지 않으셔도 회중과 눈을 맞추며 말씀을 전하실 수 있습니다.</p>
+    </div>
+    <div class="duo" style="margin-top:clamp(36px,5vw,60px)">
+      <div class="d rv"><h4>읽으실 때는, 회중과 같은 화면</h4><p>봉독하시는 동안에는 회중 화면을 같은 줄, 같은 자리 그대로 비춥니다. 아래 「이어서」에는 다 읽고 바로 이어 말씀하실 원고의 첫머리가 기다립니다.</p><img class="shot" src="img/speech-read.jpg" alt="스피치뷰 낭독 중 화면: 위에 회중 화면과 같은 다니엘 9장 21절 본문, 아래 이어서 띠에 21절 설교 원고 첫머리" width="1920" height="1080" loading="lazy"></div>
+      <div class="d rv d1"><h4>설교하실 때는, 원고가 따라옵니다</h4><p>다 읽으시면 오늘 설교 원고가 쓰신 글자 그대로 펼쳐집니다. 말씀하시는 문장을 밝은 띠가 따라가고 원고는 알아서 넘어갑니다. 맨 위에는 본문 주소와 지금 대지, 시계가 있습니다.</p><img class="shot" src="img/speech-note.jpg" alt="스피치뷰 설교 중 화면: 위 줄에 단 9:21과 대지 제목과 시계, 아래 설교 원고에서 지금 말씀하시는 문장이 밝은 띠로 표시" width="1920" height="1080" loading="lazy"></div>
+    </div>
+    <div class="wall rv">
+      <span class="hi">회중 화면과 같은 줄</span><span class="hi">말씀하시는 문장을 따라가는 띠</span><span class="hi">쓰신 원고 그대로</span>
+      <span>예배 전에는 설교 제목과 본문을 크게</span><span>단상에서 ▲▼로 한 문장씩</span><span>멀리서도 읽히는 큰 글씨</span><span>눈이 편한 어두운 화면</span><span>설치 없이 웹 주소 하나로</span><span>필요한 교회만 켜서</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Live: 예배 영상 ===== -->
+<section class="band" id="film">
+  <div class="wrap">
+    <div class="split" style="margin-top:0">
+      <div class="vis rv"><div class="film" aria-label="한 예배의 영상 예시">
+        <div class="fv"><img src="img/film-cover.jpg" alt="예배 영상 표지: 은혜교회 주일예배 2026년 11월 22일 주일, 오른쪽 아래 Elovate 표식" width="1280" height="720" loading="lazy"><span class="tag">촬영을 쉰 구간</span></div>
+        <div class="bar"><i class="cv" style="flex:2.6">찬양</i><i class="cam" style="flex:1.7">기도 · 봉독</i><i class="cam" style="flex:4.8">설교</i><i class="cam" style="flex:1.1">축도</i><span class="ph"></span></div>
+        <div class="meta"><span><b>주일예배</b> · 한 예배, 한 편의 영상</span><span class="leg"><span>촬영</span><span class="cv">표지</span></span></div>
+      </div></div>
+      <div class="txt rv d1">
+        <p class="eyebrow">Service Video</p>
+        <h2 class="h-m">예배를 시작하시면,<br>촬영도 함께 시작됩니다.</h2>
+        <p class="body">예배 시작 단추 하나로 녹음과 회중 화면, 촬영이 함께 움직입니다. 정해 두신 구도에서 찍기 시작해, 예배를 마치시면 한 예배가 한 편의 영상으로 정리됩니다.</p>
+        <ul>
+          <li>예배를 시작하면 정해 두신 구도로, 마치시면 촬영도 쉽니다</li>
+          <li>구도와 확대, 초점은 단상 화면에서 손끝으로</li>
+          <li>한 예배는 한 편의 영상으로, 녹음과 같은 자리에 보관</li>
+          <li>촬영이 없던 구간은 검은 화면 대신 교회 이름과 예배, 날짜를 담은 표지로</li>
+          <li>찬양 시간에는 촬영을 쉬도록 정하실 수도 있습니다</li>
+          <li>지난 영상은 녹음과 같은 주기로 정리되어 저장 공간이 차지 않습니다</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -624,6 +702,9 @@ footer a:hover{color:var(--fg)}
       <div class="f rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h4>예배 기록</h4><p>예배 시작과 함께 녹음되고, 마치면 그날의 폴더에 보관됩니다. 어떤 말씀이 언제 올랐는지 기록이 남습니다.</p></div>
       <div class="f rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><h4>반주기 연동</h4><p>찬송 번호가 반주기로 전해지고, 찬송 시간에는 반주기 화면이 회중 화면에 그대로 오릅니다.</p></div>
       <div class="f rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2l.9-5.5-4-3.9L9.5 8z"/></svg></div><h4>설교 제목과 대지</h4><p>본문을 다 읽으시면 설교 제목이 오르고, 대지를 말씀하실 때 그 문장이 띠로 비칩니다.</p></div>
+      <div class="f rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 12h6"/></svg></div><h4>한마디에 순서가 이어집니다</h4><p>「찬송가 1절 부른 후에 장로님 기도하겠습니다」처럼 교회마다 늘 하시는 말을 등록해 두시면, 그 한마디에 화면과 반주가 차례로 준비됩니다. 다섯 번 말씀해 보시면 등록됩니다.</p></div>
+      <div class="f rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4L3 8l4 4"/><path d="M3 8h14"/><path d="M17 20l4-4-4-4"/><path d="M21 16H7"/></svg></div><h4>찬양과 예배, 말로 오갑니다</h4><p>「찬양 부르겠습니다」, 「예배 시작하겠습니다」 한마디에 찬양 화면과 예배 화면이 바뀝니다. 찬양만 드리는 날은 「찬양만」 단추로 찬양 화면만 엽니다.</p></div>
+      <div class="f rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h4>예배 전 점검 · 멀리서 살피기</h4><p>설치 상태와 소리, 촬영을 예배 전에 미리 시험합니다. 예배 중에는 다른 자리에서 진행 상황을 손대지 않고 살펴보실 수 있습니다.</p></div>
     </div>
   </div>
 </section>
@@ -701,8 +782,33 @@ footer a:hover{color:var(--fg)}
   </div>
 </section>
 
+<!-- ===== Sermon-Flow (준비 중) ===== -->
+<section class="band alt" id="sermon">
+  <div class="wrap">
+    <div class="center rv">
+      <p class="eyebrow">Sermon‑Flow <span class="soon">준비 중</span></p>
+      <h2 class="h-l">설교를 쓰시면,<br><span class="grad">예배 화면이 함께 준비됩니다.</span></h2>
+      <p class="lead" style="margin-top:18px">설교를 쓰시는 자리와 예배를 드리는 자리가 하나로 이어집니다. 대지와 구절을 넣으며 쓰시면 성경 본문은 개역개정으로 채워지고, 다 쓰신 원고는 단추 하나로 Worship‑Flow Live에 전해져 대지 띠와 설교 자막, 스피치뷰가 그 원고로 준비됩니다.</p>
+    </div>
+    <div class="vis rv" style="margin-top:clamp(36px,5vw,60px)"><div class="mac lg" style="margin:0 auto"><div class="lid"><div class="scr img"><img src="img/sermon-flow.jpg" alt="Sermon-Flow 설교 작성 화면: 왼쪽 목차, 위에 예배 날짜와 설교 제목과 본문, 서식 도구, 아래 대지와 개역개정 구절과 해설" width="2000" height="1469" loading="lazy"></div></div><div class="hinge"></div><div class="foot"></div></div></div>
+    <p class="capn rv">지금 다듬고 있는 설교 작성 화면입니다. 실제 예배에서 써 보며 완성해 가고 있습니다.</p>
+    <div class="feat">
+      <div class="f rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M4 12h10M4 18h6"/><path d="M18 14v6M15 17h6"/></svg></div><h4>대지와 구절, 눌러서 넣기</h4><p>줄 머리에서 대지 · 소항목 · 구절을 고르면 됩니다. 구절은 개역개정 본문이 바로 채워지고, 그 아래에 해설을 적습니다.</p></div>
+      <div class="f rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20l6-16h2l6 16"/><path d="M8 14h8"/></svg></div><h4>익숙한 서식 그대로</h4><p>굵게 · 밑줄 · 글자색 · 형광펜 · 글자 크기까지, 쓰시던 문서 프로그램처럼 씁니다. 찾기와 바꾸기도 됩니다.</p></div>
+      <div class="f rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M8 12h8"/></svg></div><h4>큰 단추, 쉬운 화면</h4><p>숨은 단축키 대신 눌러서 되는 큰 단추로 만들었습니다. 목차를 누르면 그 대지로 가고, 보기 크기도 키울 수 있습니다.</p></div>
+      <div class="f rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h4>설교 틀과 설교 목록</h4><p>빈 종이, 세 대지 설교, 본문을 한 절씩 넣는 강해 설교 틀로 시작합니다. 여러 편을 목록에 두고 찾고 엽니다.</p></div>
+      <div class="f rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg></div><h4>예전 설교 가져오기</h4><p>쓰시던 원고를 붙여 넣으시면 대지와 구절을 알아보고 정리합니다. 구절 본문은 개역개정으로 다시 받아 오타를 없앱니다.</p></div>
+      <div class="f rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 8v4l3 2"/></svg></div><h4>지난 기록으로 되돌리기</h4><p>쓰시는 동안 3분마다 기록이 남습니다. 잘못 지우셨어도 그 때로 바로 되돌리실 수 있습니다.</p></div>
+      <div class="f rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 12l3 3 5-6"/></svg></div><h4>예배 화면 미리 점검</h4><p>회중 화면에 띠로 오를 대지와 글자 수, 구절 순서를 예배 전에 미리 봅니다.</p></div>
+      <div class="f rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg></div><h4>강단 원고 인쇄 · 설교자 메모</h4><p>글자 크기와 메모 여백을 골라 인쇄합니다. 강단에서 목사님만 보실 메모는 예배 화면에 나가지 않습니다.</p></div>
+      <div class="f rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg></div><h4>보내기 한 번으로 예배까지</h4><p>다 쓰신 원고는 단추 하나로 예배 화면에 전해집니다. 설교 제목과 본문, 대지가 예배 전에 준비됩니다.</p></div>
+    </div>
+    <p class="note-c rv">설교는 목사님의 몫입니다. Sermon‑Flow는 설교를 대신 써 드리지 않습니다. 목사님이 쓰시는 일을 편하게, 쓰신 말씀이 예배까지 온전히 닿도록 돕습니다.</p>
+  </div>
+</section>
+
 <!-- ===== 은혜의 기록 ===== -->
-<section class="band alt" id="record">
+<section class="band" id="record">
   <div class="wrap">
     <div class="split">
       <div class="vis rv"><div class="rec" aria-label="설교 검색 화면 예시">
@@ -737,7 +843,7 @@ footer a:hover{color:var(--fg)}
       <p class="lead" style="margin-top:16px">Elovate는 상자째 드리는 제품이 아닙니다. 교회의 예배 순서와 화면, 제작 환경을 듣고 그 교회에 맞게 만들어 드립니다. 이 페이지의 화면들은 모두 한 교회에 맞춰 제작되어 지금 운영 중인 실제 모습입니다.</p>
     </div>
     <div class="feat">
-      <div class="f rv"><span class="tag">Worship‑Flow Live</span><h4>예배의 모양대로</h4><p>회중 화면 디자인, 예배 순서, 교독문과 기도문, 쓰시는 반주기, 안내판에 담을 내용을 교회에 맞춥니다.</p></div>
+      <div class="f rv"><span class="tag">Worship‑Flow Live</span><h4>예배의 모양대로</h4><p>회중 화면 디자인, 예배 순서, 교독문과 기도문, 쓰시는 반주기, 안내판에 담을 내용, 예배 영상의 구도와 표지까지 교회에 맞춥니다.</p></div>
       <div class="f rv d1"><span class="tag">Worship‑Flow</span><h4>제작 환경대로</h4><p>오디오 기반 편집이 기본입니다. 촬영한 예배 영상으로 작업하시는 교회는 카메라와 자막 양식, 올리는 방식에 맞춰 편집기를 따로 만듭니다.</p></div>
       <div class="f rv d2"><span class="tag">QT‑Flow</span><h4>교회의 이름으로</h4><p>교회 이름과 로고, 화면의 분위기, 낭독 목소리와 언어, 올리는 시간을 교회에 맞춰 매일 나갑니다.</p></div>
     </div>
@@ -754,7 +860,7 @@ footer a:hover{color:var(--fg)}
       <p class="lead" style="margin-top:18px">예배 진행과 설교 영상, 매일 묵상에서 시작해 설교 기록과 검색, 예배 생중계와 온라인 헌금, 성도와 재정과 교적 관리까지. 흩어져 있던 교회의 운영 시스템을 Elovate 하나로 통합해 드립니다.</p>
     </div>
     <div class="aio">
-      <div class="col rv"><h4>목사님<small>제공</small></h4><ul><li>예배 진행 자동화</li><li>설교 준비 보조 (AI 자료)</li><li>설교 기록과 말씀 보존</li><li>쉬운 온라인 전도</li></ul></div>
+      <div class="col rv"><h4>목사님<small>제공</small></h4><ul><li>예배 진행 자동화</li><li>설교 작성과 준비 보조</li><li>설교 기록과 말씀 보존</li><li>쉬운 온라인 전도</li></ul></div>
       <div class="hub rv d1"><div class="orb">ELOVATE</div><small>데이터가 저절로 이어집니다.<br>앱을 쓰시는 순간 교적과 출석이 정리됩니다.</small></div>
       <div class="col m rv d2"><h4>성도<small>누림</small></h4><ul><li>설교 다시 듣기 · 요약 보기</li><li>AI 성경 해설</li><li>모바일 주보 · 공지 받기</li><li>나만의 신앙 기록장</li></ul></div>
     </div>
@@ -992,7 +1098,7 @@ footer a:hover{color:var(--fg)}
 
   /* 메뉴: 지금 보고 있는 자리 표시. 제품 타일·맞춤 띠처럼 메뉴에 없는 자리에선 끈다. */
   var navA = [].slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
-  var marks = [['top',null],['engine','#engine'],['products',null],['live','#live'],['flow','#flow'],['qt','#qt'],['record','#platform'],['custom','#platform'],['platform','#platform'],['why','#why'],['contact','#contact']]
+  var marks = [['top',null],['engine','#engine'],['products',null],['live','#live'],['flow','#flow'],['qt','#qt'],['sermon','#sermon'],['record','#platform'],['custom','#platform'],['platform','#platform'],['why','#why'],['contact','#contact']]
     .map(function(m){ return {el:document.getElementById(m[0]), href:m[1]}; }).filter(function(m){ return m.el; });
   var navTick = false;
   function navSpy(){
